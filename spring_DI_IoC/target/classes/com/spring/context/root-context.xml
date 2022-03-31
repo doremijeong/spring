@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="summation1" class="com.spring.sub.SummationImpl" />
+	<bean id="summation2" class="com.spring.sub.SummationImpl2" />
+	
+	<bean id="minus1" class="com.spring.sub.MinusImpl" />
+	<bean id="minus2" class="com.spring.sub.MinusImpl2" />
+	
+	<bean id="multiplex1" class="com.spring.sub.MultiplexImpl" />
+	<bean id="multiplex2" class="com.spring.sub.MultiplexImpl2" />
+	
+	<bean id="divide1" class="com.spring.sub.DivideImpl" />
+	<bean id="divide2" class="com.spring.sub.DivideImpl2" />
+	
+	<bean id="cal" class="com.spring.main.Calculator">
+		<property name="summation" ref="summation2" />
+		<property name="minus" ref="minus2" />
+		<property name="multiplex" ref="multiplex2" />
+		<property name="divide" ref="divide2" />
+	</bean>
+
+</beans>
